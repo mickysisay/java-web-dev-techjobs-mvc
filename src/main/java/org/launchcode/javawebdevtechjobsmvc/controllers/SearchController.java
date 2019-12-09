@@ -2,6 +2,7 @@ package org.launchcode.javawebdevtechjobsmvc.controllers;
 
 import org.launchcode.javawebdevtechjobsmvc.models.Job;
 import org.launchcode.javawebdevtechjobsmvc.models.JobData;
+import org.launchcode.javawebdevtechjobsmvc.models.TechJobsController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +17,11 @@ import static org.launchcode.javawebdevtechjobsmvc.controllers.ListController.co
  */
 @Controller
 @RequestMapping("search")
-public class SearchController {
+public class SearchController extends TechJobsController {
 
     @RequestMapping(value = "")
     public String search(Model model) {
-        model.addAttribute("columns", columnChoices);
+      //  model.addAttribute("columns", columnChoices);
         model.addAttribute("searchType","all");
         return "search";
     }
@@ -38,8 +39,8 @@ public class SearchController {
                 jobs = JobData.findByColumnAndValue(searchType, searchTerm);
             }
         }
-        model.addAttribute("columns", columnChoices);
-        // model.addAttribute("columns", ListController.columnChoices);
+       // model.addAttribute("columns", columnChoices);
+
         model.addAttribute("jobs", jobs );
         model.addAttribute("searchTerm",searchTerm);
         model.addAttribute("searchType",searchType);
