@@ -21,7 +21,7 @@ public class SearchController extends TechJobsController {
 
     @RequestMapping(value = "")
     public String search(Model model) {
-      //  model.addAttribute("columns", columnChoices);
+
         model.addAttribute("searchType","all");
         return "search";
     }
@@ -39,7 +39,6 @@ public class SearchController extends TechJobsController {
                 jobs = JobData.findByColumnAndValue(searchType, searchTerm);
             }
         }
-       // model.addAttribute("columns", columnChoices);
 
         model.addAttribute("jobs", jobs );
         model.addAttribute("searchTerm",searchTerm);

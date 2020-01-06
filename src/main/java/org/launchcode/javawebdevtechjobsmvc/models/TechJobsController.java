@@ -10,9 +10,10 @@ public class TechJobsController {
     public TechJobsController(){
         actionChoices.put("search", "Search");
         actionChoices.put("list", "List");
-        columnChoices.put("coreCompetency", "Skill");
+
         columnChoices.put("employer", "Employer");
         columnChoices.put("location", "Location");
+        columnChoices.put("coreCompetency", "Skill");
         columnChoices.put("positionType", "Position Type");
         columnChoices.put("all", "All");
     }
